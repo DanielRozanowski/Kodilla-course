@@ -42,10 +42,20 @@ public class ForumUser {
         return theComment;
     }
     public boolean removePost(ForumPost thePost){
-        return true;
+        boolean result = false;
+        if (posts.contains(thePost)){
+            posts.remove(thePost);
+            result = true;
+        }
+        return result;
     }
     public boolean removeComment(ForumComment theComment){
-        return true;
+        boolean result = false;
+        if(comments.contains(theComment)){
+            comments.remove(theComment);
+            result = true;
+        }
+        return result;
     }
     public String getName(){
         return name;
